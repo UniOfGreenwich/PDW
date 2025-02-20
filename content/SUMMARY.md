@@ -7,12 +7,13 @@
 ------------------------------------------------------
 ------------------------------------------------------
 
-# Section
+# Git
 
-- [Markdown Book Guide](Markdown_Book_Guide/Markdown_Book_Guide.md)
-  
-- [MarkDown Documentation](Markdown_Doc/Markdown_Doc.md)
-  - [Alerts](Markdown_Doc/Alerts.md)
-  - [Alerts Directives](Markdown_Doc/Alerts_Directives.md)
-  - [Summary](Markdown_Doc/summary.md) 
-- [Placeholder]()
+  - [My First Repository](./myFirstRepository/myFirstRepository.md)
+  - [Bash Aliases](./BashAliases/BashAliases.md)
+  - [Branching-Strategy](./BranchingModel/BranchingModel.md)
+  - [Git Oneflow](./OneFlow/OneFlow.md)
+  - [Anti Patterns](./AntiPatterns/AntiPatterns.md)
+  - [Continous Deployment](./ContinousDeployment/ContinousDeployment.md)
+  - [Release Deployment](./ReleaseDeployment/ReleaseDeployment.md)
+  - [Migration](./Migration/Migration.md)
