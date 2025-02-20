@@ -170,8 +170,32 @@
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
                         <h1 id="my-first-repository"><a class="header" href="#my-first-repository">My First Repository</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>The first two things you'll want to do are install git and create a free GitHub account.</p>
-<p>Follow the instructions <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> to install git (if it's not already installed). Note that for this tutorial we will be using git on the command line only. While there are some great git GUIs (graphical user interfaces), It's easier to learn git using git-specific commands first and then to try out a git GUI once you're more comfortable with the command.</p>
+<div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
+<div class="admonition-title">
+<div id="admonition-important-title">
+<p>Important</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-important"></a>
+</div>
+<div>
+<ul>
+<li>
+<p>The first two things you'll want to do are install <code>git</code> and create a free GitHub account.</p>
+<ul>
+<li>
+<p>If on University machines, use the Software Center to install <code>git</code></p>
+</li>
+<li>
+<p>If your machine, follow the instructions <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a> to install <code>git</code> (if it's not already installed).</p>
+</li>
+<li>
+<p>Once you've done that, create a GitHub account <a href="https://github.com/join">https://github.com/join</a>, you should use your university email account, but choose a different password</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
 <div class="admonition-title">
 <div id="admonition-note-title">
@@ -180,10 +204,17 @@
 <a class="admonition-anchor-link" href="#admonition-note"></a>
 </div>
 <div>
-<p>95% of other online git resources and discussions will also be for the command-line interface.</p>
+<ul>
+<li>
+<p>Note that for this tutorial we will be using <code>git</code> on the command line only. While there are some great git GUIs (graphical user interfaces), It's easier to learn git using git-specific commands first and then to try out a git GUI once you're more comfortable with the command.</p>
+</li>
+<li>
+<p>95% of other online <code>git</code> resources and discussions will also be for the command-line interface.</p>
+</li>
+</ul>
 </div>
 </div>
-<p>Once you've done that, create a GitHub account <a href="https://github.com/join">here</a>, you should use your university email account, but choose a different password.</p>
+<p>.</p>
 <div id="admonition-info" class="admonition admonish-info" role="note" aria-labelledby="admonition-info-title">
 <div class="admonition-title">
 <div id="admonition-info-title">
@@ -192,12 +223,25 @@
 <a class="admonition-anchor-link" href="#admonition-info"></a>
 </div>
 <div>
-<p>Git and GitHub are <strong>not</strong> the same thing. Git is an open-source, version control tool created in 2005 by developers working on the Linux operating system; GitHub is a company founded in 2008 that makes tools which integrate with git. You do not need GitHub to use git, but you cannot use GitHub without using git. There are many other alternatives to GitHub, such as GitLab, BitBucket, and “host-your-own” solutions such as gogs and gittea. All of these are referred to in git-speak as “remotes”, and all are completely optional. You do not need to use a remote to use git, but it will make sharing your code with others easier.</p>
+<ul>
+<li>
+<p>Git and GitHub are <strong>not</strong> the same thing. Git is an open-source, version control tool created in 2005 by developers working on the Linux operating system; GitHub is a company founded in 2008 that makes tools which integrate with <code>git</code>.</p>
+</li>
+<li>
+<p>You do not need GitHub to use <code>git</code>, but you cannot use GitHub without using <code>git</code>.</p>
+</li>
+<li>
+<p>There are many other alternatives to GitHub, such as GitLab, BitBucket, and “host-your-own” solutions such as gogs and gittea. All of these are referred to in git-speak as “remotes”, and all are completely optional.</p>
+</li>
+<li>
+<p>You do not need to use a remote to use <code>git</code>, but it will make sharing your code with others easier.</p>
+</li>
+</ul>
 </div>
 </div>
 <h2 id="step-1-create-a-local-git-repository"><a class="header" href="#step-1-create-a-local-git-repository">Step 1: Create a local git repository</a></h2>
-<p>When creating a new project on your local machine using git, you'll first create a new repository (or often, 'repo', for short).</p>
-<p>To use git we'll be using the terminal. If you don't have much experience with the terminal and basic commands, check out this tutorial (If you don’t want/ need a short history lesson, skip to step three.)</p>
+<p>When creating a new project on your local machine using <code>git</code>, you'll first create a new repository (or often, 'repo', for short).</p>
+<p>To use <code>git</code> we'll be using the terminal. If you don't have much experience with the terminal and basic commands, check out this tutorial (If you don’t want/ need a short history lesson, skip to step three.)</p>
 <p>To begin, open up a terminal and move to where you want to place the project on your local machine using the cd (change directory) command. For example, if you have a 'projects' folder on your desktop, you'd do something like:</p>
 <div id="admonition-terminal" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-title">
 <div class="admonition-title">
@@ -434,12 +478,12 @@ Changes to be committed:
 </code></pre>
 </div>
 </div>
-<div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
+<div id="admonition-important-1" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-1-title">
 <div class="admonition-title">
-<div id="admonition-important-title">
+<div id="admonition-important-1-title">
 <p>Important</p>
 </div>
-<a class="admonition-anchor-link" href="#admonition-important"></a>
+<a class="admonition-anchor-link" href="#admonition-important-1"></a>
 </div>
 <div>
 <p>The message at the end of the commit should be something related to what the commit contains:</p>
