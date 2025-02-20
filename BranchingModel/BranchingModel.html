@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>MarkDown Documentation - MD-Book Template for UoG</title>
+        <title>Branching-Strategy - CMS - PDW: Git and GitHub</title>
 
 
         <!-- Custom HTML head -->
@@ -133,13 +133,13 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">MD-Book Template for UoG</h1>
+                    <h1 class="menu-title">CMS - PDW: Git and GitHub</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/uniofgreenwich/MD_Book_Template" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/Markdown_Doc/Markdown_Doc.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/BranchingModel/BranchingModel.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -168,248 +168,166 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <h1 id="markdown-cheat-sheet"><a class="header" href="#markdown-cheat-sheet">Markdown Cheat Sheet</a></h1>
-<p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for <a href="https://www.markdownguide.org/basic-syntax">basic syntax</a> and <a href="https://www.markdownguide.org/extended-syntax">extended syntax</a>.</p>
-<h2 id="basic-syntax"><a class="header" href="#basic-syntax">Basic Syntax</a></h2>
-<p>These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.</p>
-<h3 id="heading"><a class="header" href="#heading">Heading</a></h3>
-<h1 id="h1"><a class="header" href="#h1">H1</a></h1>
-<h2 id="h2"><a class="header" href="#h2">H2</a></h2>
-<h3 id="h3"><a class="header" href="#h3">H3</a></h3>
-<h3 id="bold"><a class="header" href="#bold">Bold</a></h3>
-<pre><code class="language-md">### Heading
-
-# H1
-
-## H2
-
-### H3
-</code></pre>
-<p><strong>bold text</strong></p>
-<pre><code class="language-md">**bold text**
-</code></pre>
-<h3 id="italic"><a class="header" href="#italic">Italic</a></h3>
-<p><em>italicized text</em></p>
-<pre><code class="language-md">*italicized text*
-</code></pre>
-<h3 id="blockquote"><a class="header" href="#blockquote">Blockquote</a></h3>
-<blockquote>
-<p>blockquote</p>
-</blockquote>
-<pre><code class="language-md">&gt; blockquote
-</code></pre>
-<h3 id="ordered-list"><a class="header" href="#ordered-list">Ordered List</a></h3>
+                        <h2 id="a-git-branching-mdeol"><a class="header" href="#a-git-branching-mdeol">A Git Branching Mdeol</a></h2>
+<h3 id="the-gist"><a class="header" href="#the-gist">The gist</a></h3>
 <ol>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
+<li><code>master/main</code> must always be deployable.</li>
+<li><strong>all changes</strong> made through feature branches (pull-request + merge)</li>
+<li>rebase to avoid/resolve conflicts; merge in to <code>master/main</code></li>
 </ol>
-<pre><code class="language-md">1. First item
-2. Second item
-3. Third item
-</code></pre>
-<h3 id="unordered-list"><a class="header" href="#unordered-list">Unordered List</a></h3>
-<ul>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ul>
-<pre><code class="language-md">- First item
-- Second item
-- Third item
-
-</code></pre>
-<h3 id="inline-code"><a class="header" href="#inline-code">Inline Code</a></h3>
-<p><code>code</code></p>
-<pre><code class="language-md">`code`
-</code></pre>
-<h3 id="horizontal-rule"><a class="header" href="#horizontal-rule">Horizontal Rule</a></h3>
-<hr />
-<pre><code class="language-md">---
-</code></pre>
-<h3 id="link"><a class="header" href="#link">Link</a></h3>
-<p><a href="https://www.markdownguide.org">Markdown Guide</a></p>
-<pre><code class="language-md">[Markdown Guide](https://www.markdownguide.org)
-</code></pre>
-<h3 id="image"><a class="header" href="#image">Image</a></h3>
-<p>It is best to place images in subfolder called <code>figures/</code>, for example <code>src/Markdown_Doc/figures</code></p>
-<p><img src="./figures/Lunar_Year_photo_credit_Ed_Simmons.jpg" alt="alt text" /></p>
-<p>When referencing the figure provide the relative path <code>./</code> means current directory, and <code>../</code> is the directory above</p>
-<pre><code class="language-md">![alt text](./figures/Lunar_Year_photo_credit_Ed_Simmons.jpg)
-![alt text](../Introduction/mdbook-qr-code.png)
-</code></pre>
-<h2 id="extended-syntax"><a class="header" href="#extended-syntax">Extended Syntax</a></h2>
-<p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
-<h3 id="mathjax"><a class="header" href="#mathjax">MathJax</a></h3>
-<p>Maths is rendered using a version of LaTeX called MathJax</p>
-<h4 id="block-maths"><a class="header" href="#block-maths">Block maths</a></h4>
-<p>\[
-E\ =\ mc^2
-\]</p>
-<pre><code class="language-md">\\[
-    E\ =\ mc^2 
-\\]
-</code></pre>
-<h4 id="inline-maths"><a class="header" href="#inline-maths">Inline maths</a></h4>
-<p>This is inline maths, \( E\ =\ mc^2 \) .</p>
-<pre><code class="language-md">This is inline maths, \\( E\ =\ mc^2 \\) .
-</code></pre>
-<h3 id="table"><a class="header" href="#table">Table</a></h3>
-<div class="table-wrapper"><table><thead><tr><th>Syntax</th><th>Description</th></tr></thead><tbody>
-<tr><td>Header</td><td>Title</td></tr>
-<tr><td>Paragraph</td><td>Text</td></tr>
-</tbody></table>
-</div>
-<pre><code class="language-md">| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-</code></pre>
-<h3 id="fenced-code-block"><a class="header" href="#fenced-code-block">Fenced Code Block</a></h3>
-<p>Many language syntaxs are supported</p>
-<p>No syntax</p>
-<pre><code>{
-  "Animal": "Dog",
-  "Breed": "Norweigan Elkhound",
-  "age": 12
-}
-</code></pre>
-<pre><code class="language-md">```
-{
-  "Animal": "Dog",
-  "Breed": "Norweigan Elkhound",
-  "age": 12
-}
-```
-</code></pre>
-<p>With syntax, ie Matlab</p>
-<pre><code class="language-matlab">a = 3;
-b = a*a;
-c = a*a*a;
-d = sqrt(a);
-fprintf('%4u square equals %4u \r', a, b)
-fprintf('%4u cube equals %4u \r', a, c)
-fprintf('The square root of %2u is %6.4f \r', a, d)
-</code></pre>
-<p>With syntax, ie c</p>
-<pre><code class="language-c">int a = 3;
-int b = a*a;
-int c = a*a*a;
-int d = sqrt(a);
-printf('%4u square equals %4u \r', a, b)
-printf('%4u cube equals %4u \r', a, c)
-printf('The square root of %2u is %6.4f \r', a, d)
-</code></pre>
-<h3 id="footnote"><a class="header" href="#footnote">Footnote</a></h3>
-<p>Here's a sentence with a footnote. <sup class="footnote-reference"><a href="#1">1</a></sup></p>
-<pre><code class="language-md">Here's a sentence with a footnote. [^1]
-</code></pre>
-<h3 id="heading-id"><a class="header" href="#heading-id">Heading ID</a></h3>
-<h3 id="custom-id"><a class="header" href="#custom-id">My Great Heading</a></h3>
-<pre><code class="language-md">### My Great Heading {#custom-id}
-</code></pre>
-<h3 id="definition-list"><a class="header" href="#definition-list">Definition List</a></h3>
-<p>term
-: definition</p>
-<h3 id="strikethrough"><a class="header" href="#strikethrough">Strikethrough</a></h3>
-<p><del>The world is flat.</del></p>
-<pre><code class="language-md">~~The world is flat.~~
-</code></pre>
-<h3 id="task-list"><a class="header" href="#task-list">Task List</a></h3>
-<ul>
-<li><input disabled="" type="checkbox" checked=""/>
-Write the press release
-<ul>
-<li><input disabled="" type="checkbox"/>
-Update the website
-<ul>
-<li><input disabled="" type="checkbox"/>
-Contact the media</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-md">- [x] Write the press release
-  - [ ] Update the website
-    - [ ] Contact the media
-</code></pre>
-<p>(See also <a href="https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji">Copying and Pasting Emoji</a>)</p>
-<h3 id="highlight"><a class="header" href="#highlight">Highlight</a></h3>
-<p>Using HTML you can hightlight.</p>
-<p><span style="color: red;">This text will be red.</span></p>
-<p><span style="color: blue;">This text will be blue.</span></p>
-<pre><code class="language-html">&lt;span style="color: red;"&gt;This text will be red.&lt;/span&gt;
-
-&lt;span style="color: blue;"&gt;This text will be blue.&lt;/span&gt;
-</code></pre>
-<h3 id="subscript"><a class="header" href="#subscript">Subscript</a></h3>
-<p>H\(_2\)0</p>
-<pre><code class="language-md">H~2~O
-</code></pre>
-<h3 id="superscript"><a class="header" href="#superscript">Superscript</a></h3>
-<p>X\(^2\)</p>
-<pre><code class="language-md">X\\(^2\\)
-</code></pre>
-<pre><code class="language-md">[^1]: This is the footnote.
-</code></pre>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>This is the footnote.</p>
-</div>
-<h2 id="html"><a class="header" href="#html">HTML</a></h2>
-<p>You can use HTML to further format the content inconjuction with markdown. Most commonly used tags are <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> and <code>&lt;table&gt;</code></p>
-<h3 id="centering-content"><a class="header" href="#centering-content">Centering Content</a></h3>
+<p>Or, as Zach Holman succinctly put it:</p>
 <div align=center>
-<p><img src="./figures/Lunar_Year_photo_credit_Ed_Simmons.jpg" alt="alt text" /></p>
-<p>Figure 2: Center content</p>
+<p><img src="./figures/masterBranchCycle.png" alt="flow" /></p>
 </div>
-<pre><code class="language-html">&lt;div align=center&gt;
+<h3 id="the-workflow"><a class="header" href="#the-workflow">The workflow</a></h3>
+<div id="admonition-code" class="admonition admonish-code" role="note" aria-labelledby="admonition-code-title">
+<div class="admonition-title">
+<div id="admonition-code-title">
+<p>Code</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-code"></a>
+</div>
+<div>
+<pre><code class="language-bash"># everything is happy and up-to-date in master
+git checkout master
+git pull origin master
 
-![alt text](./figures/Lunar_Year_photo_credit_Ed_Simmons.jpg)
+# let's branch to make changes
+git checkout -b my-new-feature
 
-Figure 2: Center content
+# go ahead, make changes now.
+$EDITOR file
 
-&lt;/div&gt;
+# commit your (incremental, atomic) changes
+git add -p
+git commit -m "my changes"
+
+# keep abreast of other changes, to your feature branch or master.
+# rebasing keeps our code working, merging easy, and history clean.
+git fetch origin
+git rebase origin/my-new-feature
+git rebase origin/master
+
+# optional: push your branch for discussion (pull-request)
+#           you might do this many times as you develop.
+git push origin my-new-feature
+
+# optional: feel free to rebase within your feature branch at will.
+#           ok to rebase after pushing if your team can handle it!
+git rebase -i origin/master
+
+# merge when done developing.
+# --no-ff preserves feature history and easy full-feature reverts
+# merge commits should not include changes; rebasing reconciles issues
+# github takes care of this in a Pull-Request merge
+git checkout master
+git pull origin master
+git merge --no-ff my-new-feature
+
+
+# optional: tag important things, such as releases
+git tag 1.0.0-RC1
 </code></pre>
-<h3 id="table-1"><a class="header" href="#table-1">Table</a></h3>
-<table>
-    <tr>
-        <td> Syntax </td>
-        <td> Description </td>
-    </tr>
-    <tr>
-        <td> Header </td>
-        <td> Title </td>
-    </tr>
-    <tr>
-        <td> Paragraph </td>
-        <td> Text </td>
-    </tr>
-</table>
-<pre><code class="language-html">&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt; Syntax &lt;/td&gt;
-        &lt;td&gt; Description &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt; Header &lt;/td&gt;
-        &lt;td&gt; Title &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt; Paragraph &lt;/td&gt;
-        &lt;td&gt; Text &lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
+</div>
+</div>
+<h3 id="useful-config"><a class="header" href="#useful-config">useful config</a></h3>
+<div id="admonition-code-1" class="admonition admonish-code" role="note" aria-labelledby="admonition-code-1-title">
+<div class="admonition-title">
+<div id="admonition-code-1-title">
+<p>Code</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-code-1"></a>
+</div>
+<div>
+<pre><code class="language-bash"># autosetup rebase so that pulls rebase by default
+git config --global branch.autosetuprebase always
+
+# if you already have branches (made before `autosetuprebase always`)
+git config branch.&lt;branchname&gt;.rebase true
 </code></pre>
+</div>
+</div>
+<h3 id="dos-and-donts"><a class="header" href="#dos-and-donts">DOs and DON'Ts</a></h3>
+<p>No DO or DON'T is sacred. You'll obviously run into exceptions, and develop
+your own way of doing things. However, these are guidelines I've found
+useful.</p>
+<h4 id="dos"><a class="header" href="#dos">DOs</a></h4>
+<ul>
+<li><strong>DO</strong> keep <code>master</code> in working order.</li>
+<li><strong>DO</strong> rebase your feature branches.
+<ul>
+<li><strong>DO</strong> pull in (rebase on top of) changes</li>
+</ul>
+</li>
+<li><strong>DO</strong> tag releases</li>
+<li><strong>DO</strong> push feature branches for discussion</li>
+<li><strong>DO</strong> learn to rebase</li>
+</ul>
+<h4 id="donts"><a class="header" href="#donts">DON'Ts</a></h4>
+<ul>
+<li><strong>DON'T</strong> merge in broken code.</li>
+<li><strong>DON'T</strong> commit onto <code>master</code> directly.
+<ul>
+<li><strong>DON'T</strong> hotfix onto master! use a feature branch.</li>
+</ul>
+</li>
+<li><strong>DON'T</strong> rebase <code>master</code>.</li>
+<li><strong>DON'T</strong> merge with conflicts. handle conflicts upon rebasing.</li>
+</ul>
+<h3 id="links"><a class="header" href="#links">Links</a></h3>
+<ul>
+<li>https://github.com/blog/1124-how-we-use-pull-requests-to-build-github</li>
+</ul>
+<h2 id="faq"><a class="header" href="#faq">FAQ</a></h2>
+<h3 id="wont-git-merge---no-ff-generate-merge-bubbles"><a class="header" href="#wont-git-merge---no-ff-generate-merge-bubbles">Won't <code>git merge --no-ff</code> generate merge bubbles?</a></h3>
+<p>Yes. Merge bubbles aren't inherently bad. They allow you to revert entire
+features at a time. They get confusing and annoying to deal with if they cross
+(commits interleave), so don't do that.</p>
+<div align=center>
+<p><img src="./figures/mergeGoodandBad.png" alt="merge bubbles" /></p>
+</div>
+<h3 id="what-do-you-mean-by-incremental-atomic-changes"><a class="header" href="#what-do-you-mean-by-incremental-atomic-changes">What do you mean by "incremental, atomic" changes?</a></h3>
+<p>http://en.wikipedia.org/wiki/Atomic_commit#Atomic_Commit_Convention</p>
+<p>Thanks wikipedia, I couldn't have put it better myself.</p>
+<h3 id="why-not-gitflow-or-another-complex-workflow"><a class="header" href="#why-not-gitflow-or-another-complex-workflow">Why not <a href="http://nvie.com/git-model/">gitflow</a> or another complex workflow?</a></h3>
+<p>Be my guest. I've used gitflow and other similar models.After working in various teams, this is just what I've come to use. But next time you have to ask someone whether it is okay to push or pull from this or that branch.</p>
+<h3 id="but-is-it-web-scale"><a class="header" href="#but-is-it-web-scale">But, is it <a href="http://mongodb-is-web-scale.com/">web-scale</a>?</a></h3>
+<p>Friends claim more complex models are necessary for scaling large teams,
+maintaining old releases, controlling information flow, etc. It very well may
+be that using multiple mainlines (e.g. <code>develop</code>, <code>stable</code>, <code>release</code>, <code>v2</code>,
+<code>tested</code>, etc) is exactly what fits your organization's constraints. That's
+for you to decide, not me (unless we work together -- oh hi there!).</p>
+<p>But you always have to wonder, "shouldn't I use tags for that"? For example,
+tracking releases on a branch is a bit silly. A release commit can be tagged.
+You can checkout a tag, just like any branch, or any commit, and do
+whatever it is you need to do.</p>
+<p>My guess is this relationship holds:</p>
+<div align=center>
+<p><img src="./figures/commitsHeadless.png" alt="headless" /></p>
+</div>
+<p>So, perhaps taking five minutes to teach your team how to use <code>checkout</code> and
+<code>tag</code> might save you more than 15% on car insurance.</p>
+<h2 id="github-notes"><a class="header" href="#github-notes">GitHub notes</a></h2>
+<h3 id="dont-fork-push-feature-branches-to-main-repo"><a class="header" href="#dont-fork-push-feature-branches-to-main-repo">Don't fork. Push feature branches to main repo.</a></h3>
+<p>Sometimes I see people forking repositories in order to issue pull-requests.
+Yes, you may have to do this when contributing to open-source projects you
+don't regularly contribute to. But, if you are a contributor, or working in the
+same org, get push rights on the repo and push all your feature branches to it.
+<strong>Issue pull requests from one branch to another within the same repo.</strong></p>
+<h3 id="should-i-merge-pull-requests-on-the-site-or-commandline"><a class="header" href="#should-i-merge-pull-requests-on-the-site-or-commandline">Should I merge Pull Requests on the site or commandline?</a></h3>
+<p>Up to you. Github does <code>git merge --no-ff</code> so that the commit message indicates
+the pull request number. This is useful information to have, don't just throw
+away history for the sake of it. You never know what will be useful to look at
+in the future.</p>
 
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Markdown_Book_Guide/Markdown_Book_Guide.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../BashAliases/BashAliases.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Markdown_Doc/Alerts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../OneFlow/OneFlow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -419,11 +337,11 @@ Figure 2: Center content
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Markdown_Book_Guide/Markdown_Book_Guide.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../BashAliases/BashAliases.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Markdown_Doc/Alerts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../OneFlow/OneFlow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

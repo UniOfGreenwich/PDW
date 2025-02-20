@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - CMS - PDW: Git and GitHub</title>
+        <title>Migration - CMS - PDW: Git and GitHub</title>
 
 
         <!-- Custom HTML head -->
@@ -12,38 +12,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="./theme/pagetoc.css">
-        <link rel="stylesheet" href="./theme/css/mdbook-admonish.css">
-        <link rel="stylesheet" href="./theme/css/code.css">
-        <link rel="stylesheet" href="./theme/css/terminal.css">
-        <link rel="stylesheet" href="./theme/css/output.css">
+        <link rel="stylesheet" href=".././theme/pagetoc.css">
+        <link rel="stylesheet" href=".././theme/css/mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/css/code.css">
+        <link rel="stylesheet" href=".././theme/css/terminal.css">
+        <link rel="stylesheet" href=".././theme/css/output.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="../toc.js"></script>
     </head>
     <body>
     <div id="body-container">
@@ -95,7 +95,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -139,7 +139,7 @@
                         <a href="https://github.com/uniofgreenwich/MD_Book_Template" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/Introduction/Introduction.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/Migration/Migration.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -168,65 +168,77 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<table>
-<tr>
-<td>
-<p>The mdBook accessed outside of blackboard and is mobile and tablet friendly. :</p>
+                        <h1 id="migration"><a class="header" href="#migration">Migration</a></h1>
+<p>Migrating projects to the new branching strategies is a simple task outlined below.</p>
+<p><strong>Note</strong>: The process applies to <a href="release-deployment.html">release deployment</a> projects.
+Any legacy continuous deployment project simply follows the
+instructions <a href="continuous-deployment.html">here</a>.</p>
+<h2 id="migration-process"><a class="header" href="#migration-process">Migration Process</a></h2>
+<ol>
+<li>
+<p>Determine which branch is deployed to production.</p>
 <ul>
-<li><a href="https://uniofgreenwich.github.io/MD_Book_Template/Introduction.html">https://uniofgreenwich.github.io/MD_Book_Template/</a></li>
-<li>Or scan the QR code on the right:</li>
+<li>For illustration purposes, let's say it's <code>current-prod</code></li>
 </ul>
-</td>
-<td>
-<p><img src="./mdbook-qr-code.png" alt="" /></p>
-</td>
-</tr>
-</table>
-<h2 id="accessibility-and-navigation"><a class="header" href="#accessibility-and-navigation">Accessibility and Navigation</a></h2>
-<p>There are several methods for navigating through the chapters (i.e., sessions).</p>
-<p>The <strong>sidebar</strong> on the left provides a list of all chapters/sessions.
-Clicking on any of the chapter/session titles will load that page.</p>
-<p>The sidebar may not automatically appear if the window is too narrow, particularly on mobile displays.
-In that situation, the menu icon (<i class="fa fa-bars"></i>) at the top-left of the page can be pressed to open and close the sidebar.</p>
-<p>The <strong>arrow buttons</strong> at the bottom of the page can be used to navigate to the previous or the next chapter.</p>
-<p>The <strong>left and right arrow keys</strong> on the keyboard can be used to navigate to the previous or the next chapter.</p>
-<h3 id="top-menu-bar"><a class="header" href="#top-menu-bar">Top menu bar</a></h3>
-<p>The menu bar at the top of the page provides some icons for interacting with the book.
-The icons displayed will depend on the settings of how the book was generated.</p>
-<div class="table-wrapper"><table><thead><tr><th>Icon</th><th>Description</th></tr></thead><tbody>
-<tr><td><i class="fa fa-bars"></i></td><td>Opens and closes the chapter listing sidebar.</td></tr>
-<tr><td><i class="fa fa-paint-brush"></i></td><td>Opens a picker to choose a different color theme.</td></tr>
-<tr><td><i class="fa fa-search"></i></td><td>Opens a search bar for searching within the book.</td></tr>
-<tr><td><i class="fa fa-print"></i></td><td>Instructs the web browser to print the entire book.</td></tr>
-<tr><td><i class="fa fa-github"></i></td><td>Opens a link to the website that hosts the source code of the book.</td></tr>
-<tr><td><i class="fa fa-edit"></i></td><td>Opens a page to directly edit the source of the page you are currently reading.</td></tr>
-</tbody></table>
+</li>
+<li>
+<p>Merge <code>current-prod</code> into <code>master</code></p>
+<div id="admonition-terminal" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-title">
+<div class="admonition-title">
+<div id="admonition-terminal-title">
+<p>Terminal</p>
 </div>
-<p>Tapping the menu bar will scroll the page to the top.</p>
-<h3 id="search"><a class="header" href="#search">Search</a></h3>
-<p>Each book has a built-in search system.
-Pressing the search icon (<i class="fa fa-search"></i>) in the menu bar, or pressing the <code>S</code> key on the keyboard will open an input box for entering search terms.
-Typing some terms will show matching chapters and sections in real time.</p>
-<p>Clicking any of the results will jump to that section.
-The up and down arrow keys can be used to navigate the results, and enter will open the highlighted section.</p>
-<p>After loading a search result, the matching search terms will be highlighted in the text.
-Clicking a highlighted word or pressing the <code>Esc</code> key will remove the highlighting.</p>
-<p>You have the ability to change the theme of the mdBook by clicking the  icon on the top left mdBook. Additionally, there is a toggle for the table of content, and a search tool.</p>
-<h2 id="issues"><a class="header" href="#issues">Issues</a></h2>
-<p>If you notice a mistake you can notify the module team who can make the correction. You may be instructed to raise an actual github issue.</p>
-<h2 id="printing"><a class="header" href="#printing">Printing</a></h2>
-<p>Currently the mdBook is approximately 60+ pages, and the environmental impact per page ~10.2L water, 2g CO\(_2\) and 2g wood. Therefore, ~600L water, 120g CO\(_2\) and 120g wood would be needed to produce a paper copy of this mdBook.</p>
-<p>The environmental effects of paper production include deforestation, the use of enormous amounts of energy and water as well as air pollution and waste problems. Paper accounts for around 26% of total waste at landfills</p>
-<p>Therefore, please print only if this is really necessary.</p>
+<a class="admonition-anchor-link" href="#admonition-terminal"></a>
+</div>
+<div>
+<pre><code>$ git checkout master
+$ git merge current-prod
+</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a <code>develop</code> branch off of <code>master</code> if none exists</p>
+<div id="admonition-terminal-1" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-1-title">
+<div class="admonition-title">
+<div id="admonition-terminal-1-title">
+<p>Terminal</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-terminal-1"></a>
+</div>
+<div>
+<pre><code>$ git checkout master
+$ git checkout -b develop
+</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Notify your team branching &amp; release Czar so that he or she can protect the following branches:</p>
+<ul>
+<li><code>master</code></li>
+<li><code>develop</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="protected-branches"><a class="header" href="#protected-branches">Protected Branches</a></h2>
+<p><a href="www.github.com">Github</a> offers a feature called
+<a href="https://help.github.com/articles/defining-the-mergeability-of-pull-requests/">Protected Branches</a>.
+We leverage this to make sure our core branches are safe.</p>
+<p>To protect a branch, follow these instructions:</p>
+<ol>
+<li>Navigate to your Github repository</li>
+<li>Click on <strong>Settings</strong> and then on <strong>Branches</strong> in the left-hand navigation</li>
+<li>In the <strong>Protected branches</strong> section, configure both <code>master</code> and <code>develop</code> branches.</li>
+</ol>
 
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="myFirstRepository/myFirstRepository.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="../ReleaseDeployment/ReleaseDeployment.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+
 
                         <div style="clear: both"></div>
                     </nav>
@@ -234,10 +246,10 @@ Clicking a highlighted word or pressing the <code>Esc</code> key will remove the
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="myFirstRepository/myFirstRepository.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="../ReleaseDeployment/ReleaseDeployment.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+
             </nav>
 
         </div>
@@ -250,16 +262,16 @@ Clicking a highlighted word or pressing the <code>Esc</code> key will remove the
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="./theme/pagetoc.js"></script>
+        <script src=".././theme/pagetoc.js"></script>
 
 
     </div>

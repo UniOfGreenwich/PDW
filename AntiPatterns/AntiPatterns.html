@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Summary - MD-Book Template for UoG</title>
+        <title>Anti Patterns - CMS - PDW: Git and GitHub</title>
 
 
         <!-- Custom HTML head -->
@@ -133,13 +133,13 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">MD-Book Template for UoG</h1>
+                    <h1 class="menu-title">CMS - PDW: Git and GitHub</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/uniofgreenwich/MD_Book_Template" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/Markdown_Doc/summary.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/AntiPatterns/AntiPatterns.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -168,125 +168,53 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <h1 id="summarymd"><a class="header" href="#summarymd">SUMMARY.md</a></h1>
-<p>The summary file is used by mdBook to know what chapters to include, in what
-order they should appear, what their hierarchy is and where the source files
-are. Without this file, there is no book.</p>
-<p>This markdown file must be named <code>SUMMARY.md</code>. Its formatting
-is very strict and must follow the structure outlined below to allow for easy
-parsing. Any element not specified below, be it formatting or textual, is likely
-to be ignored at best, or may cause an error when attempting to build the book.</p>
-<h3 id="structure"><a class="header" href="#structure">Structure</a></h3>
-<ol>
-<li>
-<p><em><strong>Title</strong></em> - While optional, it's common practice to begin with a title, generally <code
-class="language-markdown"># Summary</code>. This is ignored by the parser however, and
-can be omitted.</p>
-<pre><code class="language-markdown"># Summary
-</code></pre>
+                        <h1 id="anti-patterns"><a class="header" href="#anti-patterns">Anti Patterns</a></h1>
+<p>This page lists some anti-patterns we want to avoid at all cost. Seriously, don't
+even think of doing anything you see below.</p>
+<ul>
+<li><a href="#anti-patterns">Anti Patterns</a>
+<ul>
+<li><a href="#dont-develop-a-feature-in-develop-or-mastermain">Don't develop a feature in <code>develop</code> or <code>master/main</code></a></li>
+<li><a href="#dont-fix-bugs-in-mastermain">Don't fix bugs in <code>master/main</code></a></li>
+<li><a href="#dont-merge-your-pull-requests-without-a-1">Don't merge your pull requests without a +1</a></li>
+</ul>
 </li>
-<li>
-<p><em><strong>Prefix Chapter</strong></em> - Before the main numbered chapters, prefix chapters can be added
-that will not be numbered. This is useful for forewords,
-introductions, etc. There are, however, some constraints. Prefix chapters cannot be
-nested; they should all be on the root level. And you cannot add
-prefix chapters once you have added numbered chapters.</p>
-<pre><code class="language-markdown">[A Prefix Chapter](relative/path/to/markdown.md)
-
-- [First Chapter](relative/path/to/markdown2.md)
-</code></pre>
-</li>
-<li>
-<p><em><strong>Part Title</strong></em> -
-Level 1 headers can be used as a title for the following numbered chapters.
-This can be used to logically separate different sections of the book.
-The title is rendered as unclickable text.
-Titles are optional, and the numbered chapters can be broken into as many parts as desired.
-Part titles must be h1 headers (one <code>#</code>), other heading levels are ignored.</p>
-<pre><code class="language-markdown"># My Part Title
-
-- [First Chapter](relative/path/to/markdown.md)
-</code></pre>
-</li>
-<li>
-<p><em><strong>Numbered Chapter</strong></em> - Numbered chapters outline the main content of the book
-and can be nested, resulting in a nice hierarchy
-(chapters, sub-chapters, etc.).</p>
-<pre><code class="language-markdown"># Title of Part
-
-- [First Chapter](relative/path/to/markdown.md)
-- [Second Chapter](relative/path/to/markdown2.md)
-   - [Sub Chapter](relative/path/to/markdown3.md)
-
-# Title of Another Part
-
-- [Another Chapter](relative/path/to/markdown4.md)
-</code></pre>
-<p>Numbered chapters can be denoted with either <code>-</code> or <code>*</code> (do not mix delimiters).</p>
-</li>
-<li>
-<p><em><strong>Suffix Chapter</strong></em> - Like prefix chapters, suffix chapters are unnumbered, but they come after
-numbered chapters.</p>
-<pre><code class="language-markdown">- [Last Chapter](relative/path/to/markdown.md)
-
-[Title of Suffix Chapter](relative/path/to/markdown2.md)
-</code></pre>
-</li>
-<li>
-<p><em><strong>Draft chapters</strong></em> - Draft chapters are chapters without a file and thus content.
-The purpose of a draft chapter is to signal future chapters still to be written.
-Or when still laying out the structure of the book to avoid creating the files
-while you are still changing the structure of the book a lot.
-Draft chapters will be rendered in the HTML renderer as disabled links in the table
-of contents, as you can see for the next chapter in the table of contents on the left.
-Draft chapters are written like normal chapters but without writing the path to the file.</p>
-<pre><code class="language-markdown">- [Draft Chapter]()
-</code></pre>
-</li>
-<li>
-<p><em><strong>Separators</strong></em> - Separators can be added before, in between, and after any other element. They result
-in an HTML rendered line in the built table of contents.  A separator is
-a line containing exclusively dashes and at least three of them: <code>---</code>.</p>
-<pre><code class="language-markdown"># My Part Title
-
-[A Prefix Chapter](relative/path/to/markdown.md)
-
----
-
-- [First Chapter](relative/path/to/markdown2.md)
-</code></pre>
-</li>
-</ol>
-<h3 id="example"><a class="header" href="#example">Example</a></h3>
-<p>Below is the markdown source for the <code>SUMMARY.md</code> for this guide, with the resulting table
-of contents as rendered to the left.</p>
-<pre><code class="language-markdown">
-------------------------------------------------------
-------------------------------------------------------
-
-- [Introduction](Introduction/Introduction.md)
-
-------------------------------------------------------
-------------------------------------------------------
-
-# Section
-
-- [Markdown Book Guide](Markdown_Book_Guide/Markdown_Book_Guide.md)
-  
-- [MarkDown Documentation](Markdown_Doc/Markdown_Doc.md)
-  - [Alerts](Markdown_Doc/Alerts.md)
-  - [Alerts Directives](Markdown_Doc/Alerts_Directives.md)
-  - [Summary](Markdown_Doc/summary.md) 
-- [Placeholder]()
-</code></pre>
+</ul>
+<h2 id="dont-develop-a-feature-in-develop-or-mastermain"><a class="header" href="#dont-develop-a-feature-in-develop-or-mastermain">Don't develop a feature in <code>develop</code> or <code>master/main</code></a></h2>
+<p><strong>Instead</strong>: Create a feature branch off of <code>develop</code> or <code>master/main</code>. When the
+feature is developed and tested, create a pull request.</p>
+<p><strong>Why?</strong>: All code changes require a code review and verification by our QA team.
+By opening a pull request, you signal to the rest of the team that your code
+is ready to be reviewed and tested.</p>
+<hr />
+<h2 id="dont-fix-bugs-in-mastermain"><a class="header" href="#dont-fix-bugs-in-mastermain">Don't fix bugs in <code>master/main</code></a></h2>
+<p><strong>Instead</strong>: Create a hotfix branch off of <code>master/main</code>. Write a test case, fix the bug
+and create a pull request.</p>
+<p><strong>Why?</strong>: Production bug fixes are super critical and it's especially important
+to properly review them. If nobody is around to review, quickly escalate to your
+lead.</p>
+<p><strong>But... my boss or project manager stands next to me</strong> and says, "<em>Deploy it already!</em>"
+Kindly point them to this document, ask for help to escalate and find someone who can review
+the pull request.</p>
+<hr />
+<h2 id="dont-merge-your-pull-requests-without-a-1"><a class="header" href="#dont-merge-your-pull-requests-without-a-1">Don't merge your pull requests without a +1</a></h2>
+<p><strong>Instead</strong>: Ask a team member for a code review and to +1 your changes.</p>
+<p><strong>Why?</strong>: <em>Nobody is perfect.</em> Having said that, we always want to make sure at
+least one other team member reviews our code. Performance, readability, bugs,
+memory leaks, etc can all be impacted by code changes and sharing the responsibility
+to think about all that with a team member takes pressure off your shoulders.</p>
+<hr />
 
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Markdown_Doc/Alerts_Directives.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../OneFlow/OneFlow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="../ContinousDeployment/ContinousDeployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -294,10 +222,13 @@ of contents as rendered to the left.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Markdown_Doc/Alerts_Directives.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../OneFlow/OneFlow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="../ContinousDeployment/ContinousDeployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

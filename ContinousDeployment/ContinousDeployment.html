@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Markdown Book Guide - MD-Book Template for UoG</title>
+        <title>Continous Deployment - CMS - PDW: Git and GitHub</title>
 
 
         <!-- Custom HTML head -->
@@ -133,13 +133,13 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">MD-Book Template for UoG</h1>
+                    <h1 class="menu-title">CMS - PDW: Git and GitHub</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/uniofgreenwich/MD_Book_Template" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/Markdown_Book_Guide/Markdown_Book_Guide.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/ContinousDeployment/ContinousDeployment.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -168,40 +168,39 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <h1 id="documentation"><a class="header" href="#documentation">Documentation</a></h1>
-<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
-<div class="admonition-title">
-<div id="admonition-note-title">
-<p>Note</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-note"></a>
-</div>
-<div>
+                        <h1 id="continous-deployment"><a class="header" href="#continous-deployment">Continous Deployment</a></h1>
+<p>Use this strategy for projects where features get deployed as soon as they're ready.</p>
+<p>We follow the <a href="https://guides.github.com/introduction/flow/"><strong>GitHub flow</strong></a>
+workflow as closely as possible. This page showcases common development scenarios
+and how to deal with them from a branching point of view.</p>
 <ul>
-<li>Version: 1.0.0</li>
-<li>View the deployment for a rendered documentation:
+<li><a href="#continous-deployment">Continous Deployment</a>
 <ul>
-<li><a href="https://uniofgreenwich.github.io/MD_Book_Template">https://uniofgreenwich.github.io/MD_Book_Template</a></li>
+<li><a href="#branches-overview">Branches Overview</a></li>
+<li><a href="#develop-a-new-feature">Develop a new feature</a></li>
+<li><a href="#develop-multiple-features-in-parallel">Develop multiple features in parallel</a></li>
+<li><a href="#production-hot-fix">Production hot fix</a></li>
+<li><a href="#develop-in-a-platform-repo">Develop in a platform repo</a></li>
 </ul>
 </li>
 </ul>
+<h2 id="branches-overview"><a class="header" href="#branches-overview">Branches Overview</a></h2>
+<div align=center>
+<p><img src="./figures/continuous-overview.png" alt="Github flow workflow" /></p>
 </div>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Branch</th><th style="text-align: left">Protected?</th><th style="text-align: left">Base Branch</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>master</code></td><td style="text-align: left">YES</td><td style="text-align: left">N/A</td><td style="text-align: left">What is live in production (<strong>stable</strong>).<br/>A pull request is required to merge code into <code>master</code>.</td></tr>
+<tr><td style="text-align: left">feature</td><td style="text-align: left">NO</td><td style="text-align: left"><code>master</code></td><td style="text-align: left">Cutting-edge features (<strong>unstable</strong>). These branches are used for any maintenance features / active development.</td></tr>
+<tr><td style="text-align: left"><code>hotfix-*</code></td><td style="text-align: left">NO</td><td style="text-align: left"><code>master</code></td><td style="text-align: left">These are bug fixes against production.<br/></td></tr>
+</tbody></table>
 </div>
-<p>This template can used to create a place for all exercises or source of knowledge for your module, which is deployed as a webpage with the following address:</p>
-<p><code>https://uniofgreenwich.github.io/Name_of_your_Repository</code>, best practice is to prefix with the module code.</p>
-<p>Examples:</p>
-<ul>
+<h2 id="develop-a-new-feature"><a class="header" href="#develop-a-new-feature">Develop a new feature</a></h2>
+<div align=center>
+<p><img src="./figures/continuous-new-feature.png" alt="Hotfix use rarely" /></p>
+</div>
+<ol>
 <li>
-<p><a href="https://uniofgreenwich.github.io/ELEE1147_Exercises/">https://uniofgreenwich.github.io/ELEE1147_Exercises/</a></p>
-</li>
-<li>
-<p><a href="https://uniofgreenwich.github.io/ELEE1119_Exercises/">https://uniofgreenwich.github.io/ELEE1119_Exercises/</a></p>
-</li>
-</ul>
-<h2 id="how-to"><a class="header" href="#how-to">How to...</a></h2>
-<h3 id="setting-up-gitgithub"><a class="header" href="#setting-up-gitgithub">Setting up Git/Github</a></h3>
-<p>Open Git Bash</p>
-<p>First set your username:</p>
+<p>Create a feature branch based off of <code>master</code>.</p>
 <div id="admonition-terminal" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-title">
 <div class="admonition-title">
 <div id="admonition-terminal-title">
@@ -210,11 +209,15 @@
 <a class="admonition-anchor-link" href="#admonition-terminal"></a>
 </div>
 <div>
-<pre><code class="language-sh">git config --global user.name "YourGitHubUserName"
+<pre><code>$ git checkout master
+$ git checkout -b MYTEAM-123-new-documentation
+$ git push --set-upstream MYTEAM-123-new-documentation
 </code></pre>
 </div>
 </div>
-<p>Next set your email:</p>
+</li>
+<li>
+<p>Develop the code for the new feature and commit as you go.</p>
 <div id="admonition-terminal-1" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-1-title">
 <div class="admonition-title">
 <div id="admonition-terminal-1-title">
@@ -223,36 +226,57 @@
 <a class="admonition-anchor-link" href="#admonition-terminal-1"></a>
 </div>
 <div>
-<pre><code class="language-sh">git config --global user.email "TheEmailYouUsedForGitHub"
+<pre><code>$ ... make changes
+$ git add -A .
+$ git commit -m "Add new documentation files"
+$ ... make more changes
+$ git add -A .
+$ git commit -m "Fix some spelling errors"
+$ git push
 </code></pre>
 </div>
 </div>
-<h2 id="security-and-authentication"><a class="header" href="#security-and-authentication">Security and authentication</a></h2>
-<p>You need to create an ssh key to push and pull to your online storage/repo before we try to sync with the cloud.</p>
-<div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
-<div class="admonition-title">
-<div id="admonition-important-title">
-<p>Important</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-important"></a>
-</div>
-<div>
-<ul>
-<li>
-<p>When you see <code>~</code>, this means <strong>home</strong>,</p>
-<ul>
-<li>
-<p>On the university imaged machines this typically is the <code>G Drive</code></p>
 </li>
 <li>
-<p>If you are not then this will be, <code>C/Users/&lt;username&gt;/</code>, your <strong>home</strong></p>
-</li>
+<p>Navigate to the project on <a href="www.github.com">Github</a> and open a pull request
+with the following branch settings:</p>
+<ul>
+<li>Base: <code>master</code></li>
+<li>Compare: <code>MYTEAM-123-new-documentation</code></li>
 </ul>
 </li>
-</ul>
+<li>
+<p>When the pull request has been reviewed and <img src="./figures/plus1.png" alt="+1&#39;d" />
+, merge and close it and then delete the <code>MYTEAM-123-new-documentation</code>
+branch. This can all be done from the Github pull-request page.</p>
+</li>
+<li>
+<p>Deploy <code>master</code> to a staging environment to verify (<em>some teams have this
+automated, some prefer a manual deploy with some conventions, either is fine</em>).</p>
+</li>
+<li>
+<p>If everything is good in staging, promote it to production and you're done.
+If not, roll back production to the previous release and return to Step 1.</p>
+</li>
+</ol>
+<h2 id="develop-multiple-features-in-parallel"><a class="header" href="#develop-multiple-features-in-parallel">Develop multiple features in parallel</a></h2>
+<p>There's nothing special about that. Each developer follows the above
+<a href="#develop-a-new-feature">Develop a new feature</a> process.</p>
+<p>During development, make sure to update from <code>master</code> often so that when you
+get ready to complete your feature you don't have to deal with large code
+conflicts.</p>
+<h2 id="production-hot-fix"><a class="header" href="#production-hot-fix">Production hot fix</a></h2>
+<p><em>In rare situations you may need to get a fix into production fast! Use this
+workflow to push a hotfix to production when you can't spare the time to
+follow the standard 'Develop a feature' workflow.</em></p>
+<div align=center>
+<p><img src="./figures/continuous-hotfix.png" alt="Hotfix use rarely" /></p>
 </div>
-</div>
-<p>Follow these instructions in the command line.</p>
+*This is very similar to how we [Develop a new feature](#develop-a-new-feature)
+described above.*
+<ol>
+<li>
+<p>Make sure your <code>master</code> branch is up-to-date</p>
 <div id="admonition-terminal-2" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-2-title">
 <div class="admonition-title">
 <div id="admonition-terminal-2-title">
@@ -261,62 +285,15 @@
 <a class="admonition-anchor-link" href="#admonition-terminal-2"></a>
 </div>
 <div>
-<pre><code class="language-sh">myfirstrepository on  dev
-❯ ssh-keygen -t ed25519 -C "YourGitEmail"
+<pre><code>$ git checkout master
+$ git fetch
+$ git merge origin/master
 </code></pre>
 </div>
 </div>
-<p>For every line requesting  user input just press the enter key and until the command has finished.</p>
-<div id="admonition-output" class="admonition admonish-output" role="note" aria-labelledby="admonition-output-title">
-<div class="admonition-title">
-<div id="admonition-output-title">
-<p>Output</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-output"></a>
-</div>
-<div>
-<pre><code class="language-sh">Generating public/private ed25519 key pair.
-Enter file in which to save the key (/home/yourusername/.ssh/id_ed25519):
-Created directory '/home/yourusername/.ssh'.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /home/yourusername/.ssh/id_ed25519
-Your public key has been saved in /home/yourusername/.ssh/id_ed25519.pub
-The key fingerprint is:
-SHA256:opMi+Jtjau26rE8pbgULmR4gI4SHnkxFV0dZVz1HO2g YourGitEmail
-The key's randomart image is:
-+--[ED25519 256]--+
-|oooo ....oo. ..oo|
-|B.. .   ..  . ..+|
-|B=.          E oo|
-|+*          .   .|
-|o +   . S        |
-|.o o o .         |
-|+ * +            |
-|oBo+ .           |
-|*OO+             |
-+----[SHA256]-----+
-</code></pre>
-</div>
-</div>
-<div id="admonition-error" class="admonition admonish-danger" role="note" aria-labelledby="admonition-error-title">
-<div class="admonition-title">
-<div id="admonition-error-title">
-<p>Error</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-error"></a>
-</div>
-<div>
-<p>If you get a response</p>
-<pre><code>Saving key ".ssh" failed: No such file or directory
-</code></pre>
-<p>Then you need to do the following</p>
-<pre><code>mkdir ~/.ssh
-</code></pre>
-<p>and then repeat the previous step again.</p>
-</div>
-</div>
-<p>Now you need to get your public key you have generated and add to GitHub.</p>
+</li>
+<li>
+<p>Create a hot fix branch based off of <code>master</code></p>
 <div id="admonition-terminal-3" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-3-title">
 <div class="admonition-title">
 <div id="admonition-terminal-3-title">
@@ -325,22 +302,18 @@ The key's randomart image is:
 <a class="admonition-anchor-link" href="#admonition-terminal-3"></a>
 </div>
 <div>
-<pre><code class="language-sh">myfirstrepository on  dev
-❯ cat ~/.ssh/id_ed25519.pub
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJf5t9RcKdkZwlxS14EZn91hDQndAjMIDz+c92kFtfC YourGitEmail
+<pre><code>$ git checkout -b hotfix-documentation-broken-links
+$ git push --set-upstream hotfix-documentation-broken-links
 </code></pre>
 </div>
 </div>
-<p>The copy the output from <code>ssh-ed25519 ... YourGitEmail</code> and follow the screenshots below.</p>
-<div align=center>
-<ol>
-<li><img src="./figures/step6-4.png" alt="" /></li>
-<li><img src="./figures/step6-5.png" alt="" /></li>
-<li><img src="./figures/step6-6.png" alt="" /></li>
-<li><img src="./figures/step6-7.png" alt="" /></li>
-</ol>
-</div>
-<p>Once completed, go back to the terminal and lets check for a connection:</p>
+</li>
+<li>
+<p>Add a test case to validate the bug, fix the bug, and commit
+<em>When doing a hotfix you should at <em>least</em> pair on the fix with somebody or
+review it in person with one other engineer before releasing it. We're
+running without training wheels here and want to do our best not to have to
+do a stream of hotfixes in production.</em></p>
 <div id="admonition-terminal-4" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-4-title">
 <div class="admonition-title">
 <div id="admonition-terminal-4-title">
@@ -349,112 +322,48 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJf5t9RcKdkZwlxS14EZn91hDQndAjMIDz+c92kFtfC
 <a class="admonition-anchor-link" href="#admonition-terminal-4"></a>
 </div>
 <div>
-<pre><code class="language-sh">❯ ssh git@github.com
+<pre><code>... add test, fix bug, verify
+$ git add -A .
+$ git commit -m "Fix broken links"
+$ git push
 </code></pre>
 </div>
 </div>
-<div id="admonition-output-1" class="admonition admonish-output" role="note" aria-labelledby="admonition-output-1-title">
-<div class="admonition-title">
-<div id="admonition-output-1-title">
-<p>Output</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-output-1"></a>
-</div>
-<div>
-<pre><code class="language-sh">The authenticity of host 'github.com (140.82.121.4)' can't be established.
-ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-</code></pre>
-</div>
-</div>
-<div id="admonition-output-2" class="admonition admonish-output" role="note" aria-labelledby="admonition-output-2-title">
-<div class="admonition-title">
-<div id="admonition-output-2-title">
-<p>Output</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-output-2"></a>
-</div>
-<div>
-<pre><code class="language-sh">Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
-PTY allocation request failed on channel 0
-Hi &lt;Your GitHub Username&gt;! You've successfully authenticated, but GitHub does not provide shell access.
-Connection to github.com closed.
-</code></pre>
-</div>
-</div>
-<div id="admonition-tip" class="admonition admonish-tip" role="note" aria-labelledby="admonition-tip-title">
-<div class="admonition-title">
-<div id="admonition-tip-title">
-<p>Tip</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-tip"></a>
-</div>
-<div>
+</li>
+<li>
+<p>Navigate to the project on <a href="www.github.com">Github</a> and open a pull request
+with the following branch settings:</p>
 <ul>
-<li>
-<p>If you are on the university image and <code>~</code> is the <code>G Drive</code> you only have to do all the above once.</p>
-</li>
-<li>
-<p>You need to repeat if you do this on any other machine to set up the key, but again only once.</p>
-</li>
+<li>Base: <code>master</code></li>
+<li>Compare: <code>hotfix-documentation-broken-links</code></li>
 </ul>
-</div>
-</div>
-<h3 id="mfa"><a class="header" href="#mfa">MFA</a></h3>
-<p>In order to access <a href="https://github.com/UniofGreenwich">https://github.com/UniofGreenwich</a> you need to have enabled MFA on your GitHub account, if you can see this repository you likely already have.</p>
-<ul>
-<li>
-<p>Navigate to <strong>Password and authentication</strong> and enable MFA:</p>
-<p><img src="./figures/MFA.png" alt="" /></p>
-</li>
-</ul>
-<h3 id="creating-your-markdown-book"><a class="header" href="#creating-your-markdown-book">Creating your markdown book</a></h3>
-<ol>
-<li>
-<p>Inside the <a href="https://github.com/UniofGreenwich">https://github.com/UniofGreenwich</a> organisation page you create a new repository give it the following naming convention:</p>
-<pre><code>ModuleCode_Exercices
-</code></pre>
 </li>
 <li>
-<p>Use the template option and search for <code>MD_Book_Template</code></p>
-</li>
-<li>
-<p>See gif below:</p>
-<p><img src="./figures/Using_Template.gif" alt="" /></p>
+<p>When the pull request has been reviewed and <img src="./figures/plus1.png" alt="+1&#39;d" />
+, merge and close it and then delete the <code>hotfix-documentation-broken-links</code>
+branch. This can all be done from the Github pull-request page.</p>
 </li>
 </ol>
-<h2 id="tech-stack"><a class="header" href="#tech-stack">Tech Stack</a></h2>
-<p>This template includes the following tech stack:</p>
+<h2 id="develop-in-a-platform-repo"><a class="header" href="#develop-in-a-platform-repo">Develop in a platform repo</a></h2>
+<p>A platform repo contains both Progressive Mobile App and Progressive Mobile Web
+source code.</p>
+<p>The development process is the same as outlined above in
+<a href="#develop-a-new-feature">Develop a new feature</a>.</p>
+<p><strong>However</strong>, branches have to be prefixed based on the following rules:</p>
 <ul>
-<li>
-<p><a href="https://github.com/rust-lang/mdBook">Github Source mdbook</a></p>
-<ul>
-<li><a href="https://rust-lang.github.io/mdBook/">mdbook Documenation</a></li>
-</ul>
-</li>
-<li>
-<p><a href="https://github.com/tommilligan/mdbook-admonish">GitHub Source mdbook-admonish</a></p>
-<ul>
-<li><a href="https://tommilligan.github.io/mdbook-admonish/">mdbook-admonish Documentation</a></li>
-</ul>
-</li>
-<li>
-<p><a href="https://github.com/slowsage/mdbook-pagetoc">GitHub mdbook-pagtoc</a></p>
-<ul>
-<li><a href="https://jorel.dev/mdBook-pagetoc/">mdbook-pagtoc Documentation</a></li>
-</ul>
-</li>
+<li><code>app-</code>, for changes mainly touching Progressive Mobile App code.</li>
+<li><code>web-</code>, for changes mainly touching Progressive Mobile Web code.</li>
+<li><code>platform-</code>, for changes touching both Progressive Mobile App and Web code.</li>
 </ul>
 
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Introduction/Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../AntiPatterns/AntiPatterns.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Markdown_Doc/Markdown_Doc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../ReleaseDeployment/ReleaseDeployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -464,11 +373,11 @@ Connection to github.com closed.
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Introduction/Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../AntiPatterns/AntiPatterns.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Markdown_Doc/Markdown_Doc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../ReleaseDeployment/ReleaseDeployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
