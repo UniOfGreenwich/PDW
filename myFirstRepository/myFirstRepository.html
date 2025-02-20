@@ -136,10 +136,10 @@
                     <h1 class="menu-title">CMS - PDW: Git and GitHub</h1>
 
                     <div class="right-buttons">
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template" title="Git repository" aria-label="Git repository">
+                        <a href="https://github.com/uniofgreenwich/PDW" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/MD_Book_Template/edit/main/content/myFirstRepository/myFirstRepository.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/PDW/edit/main/content/myFirstRepository/myFirstRepository.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -528,7 +528,7 @@ Switched to a new branch 'dev'
 <p><img src="./figures/step6-3.png" alt="" /></p>
 </div>
 <p>Go back to the terminal.</p>
-<h2 id="security-and-authentication"><a class="header" href="#security-and-authentication">Security and authentication</a></h2>
+<h2 id="step-7-security-and-authentication"><a class="header" href="#step-7-security-and-authentication">Step 7: Security and authentication</a></h2>
 <p>You need to create an ssh key to push and pull to your online storage/repo before we try to sync with the cloud.</p>
 <p>Follow these instructions in the command line.</p>
 <p><img src="./figures/git%20config.gif" alt="" /></p>
@@ -618,7 +618,7 @@ Connection to github.com closed.
 </div>
 </div>
 <p>Now that is done, we can actually push our work to the cloud.</p>
-<h2 id="step-7-push-a-branch-to-github"><a class="header" href="#step-7-push-a-branch-to-github">Step 7: Push a branch to GitHub</a></h2>
+<h2 id="step-8-push-a-branch-to-github"><a class="header" href="#step-8-push-a-branch-to-github">Step 8: Push a branch to GitHub</a></h2>
 <p>Now we'll <code>push</code> the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the primary branch.</p>
 <p>First create a reference to the online repo.</p>
 <div id="admonition-terminal-9" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-9-title">
@@ -802,7 +802,7 @@ branch 'dev' set up to track 'origin/dev'.
 </div>
 </div>
 <p><img src="./figures/step7-1.png" alt="" /></p>
-<h2 id="step-8-create-a-pull-request-pr"><a class="header" href="#step-8-create-a-pull-request-pr">Step 8: Create a pull request (PR)</a></h2>
+<h2 id="step-9-create-a-pull-request-pr"><a class="header" href="#step-9-create-a-pull-request-pr">Step 9: Create a pull request (PR)</a></h2>
 <p>A pull request (or PR) is a way to alert a repo's owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the primary branch.</p>
 <p>This is what the PR page looks like before you've submitted it:</p>
 <div align=center>
@@ -813,7 +813,7 @@ branch 'dev' set up to track 'origin/dev'.
 You might see a big green button at the bottom that says 'Merge pull request'. Clicking this means you'll merge your changes into the primary branch..</p>
 <p><img src="./figures/step8-3.png" alt="" /></p>
 <p>Sometimes you'll be a co-owner or the sole owner of a repo, in which case you may not need to create a PR to merge your changes. However, it's still a good idea to make one so you can keep a more complete history of your updates and to make sure you always create a new branch when making changes.</p>
-<h2 id="step-9-merge-a-pr"><a class="header" href="#step-9-merge-a-pr">Step 9: Merge a PR</a></h2>
+<h2 id="step-10-merge-a-pr"><a class="header" href="#step-10-merge-a-pr">Step 10: Merge a PR</a></h2>
 <p>Go ahead and click the green 'Merge pull request' button. This will merge your changes into the primary branch.</p>
 <p><img src="./figures/step8-4.png" alt="" />
 <img src="./figures/step8-5.png" alt="" />
@@ -823,7 +823,7 @@ You might see a big green button at the bottom that says 'Merge pull request'. C
 <p><img src="./figures/step8-7.png" alt="" /></p>
 <p>You can also see the hash code of the commit on the right hand side. A hash code is a unique identifier for that specific commit. It's useful for referring to specific commits and when undoing changes (use the <code>git revert &lt;hash code number&gt;</code> command to backtrack).</p>
 <p>Now back to the terminal.</p>
-<h2 id="step-10-get-changes-on-github-back-to-your-computer"><a class="header" href="#step-10-get-changes-on-github-back-to-your-computer">Step 10: Get changes on GitHub back to your computer</a></h2>
+<h2 id="step-11-get-changes-on-github-back-to-your-computer"><a class="header" href="#step-11-get-changes-on-github-back-to-your-computer">Step 11: Get changes on GitHub back to your computer</a></h2>
 <p>Right now, the repo on GitHub looks a little different than what you have on your local machine. For example, the commit you made in your branch and merged into the primary branch doesn't exist in the primary branch on your local machine.</p>
 <p>In order to get the most recent changes that you or others have merged on GitHub, use the <code>git pull origin master</code>command(when working on the primary branch). In most cases, this can be shortened to <code>git pull</code>.</p>
 <div id="admonition-terminal-19" class="admonition admonish-terminal" role="note" aria-labelledby="admonition-terminal-19-title">
